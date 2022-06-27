@@ -8,21 +8,46 @@
 </head>
 <body> 
     <?php
-    $x = NULL;
-    $y = NULL;
         echo "
         <h1> Calculatrice simple en PHP </h1> <br>
-        <form action='registration.php' method='post'>
-        <span> Nombre 1: </span><input type='text' value='$x'> <br>
-        <span> Nombre 2: </span><input type='text' value='$y'> <br> <br>
-        <span> Sélectionner un opérateur <span> <br> <br>
-        <label>Addition</label><input type='radio' name='client' id='AdditionCli' value='additioner'/> <br>
-        <label>Soustraction</label><input type='radio' name='client' id='SoustractionCli' value='soustraire');' /> <br>
-        <label>Multiplication</label><input type='radio' name='client' id='MultiplicationCli' value='multiplier' /> <br>
-        <label>Division</label><input type='radio' name='client' id='DivisionCli' value='diviser'/> <br> <br>
-        <input type='button' value='Calculer'>
+        <form action='index.php' method='POST'>
+        <span> Nombre 1: </span> <input type='text' name='nbPrem'> <br>
+        <span> Nombre 2: </span> <input type='text' name='nbDeux'> <br> <br>
+        <fieldset>
+        <legend> Sélectionner un opérateur </legend>
+        <label> Addition </label> <input type='radio' name='operation' value='add' checked/> <br>
+        <label> Soustraction </label> <input type='radio' name='operation' value='substract');'/> <br>
+        <label> Multiplication </label> <input type='radio' name='operation' value='times'/> <br>
+        <label> Division </label> <input type='radio' name='operation' value='divide'/><br>
+        </fieldset>
+        <input type='submit' name='soum' value='Calculer'>
         <div> </div>
         </form>";
+        $nb1 = $_POST['nbPrem'];
+        $nb2 = $_POST['nbDeux'];
+        if ($_POST['soum'] = true);
+            echo $_SERVER['update'];
+        
+        $operator = $_POST['operation'];
+        switch($operator)
+        {
+            case "add":
+                echo "La réponse est: " .$nb1 + $nb2;
+                break; 
+            case "substract":
+                echo "La réponse est: " .$nb1 - $nb2;
+                break;
+            case "times":
+                echo "La réponse est: " .$nb1 * $nb2;
+                break; 
+            case "divide":
+                echo $nb2 == 0 ? "Division par zéro impossible" : "La réponse est: " .$nb1 / $nb2;
+                // echo "La réponse est: " .$nb1 / $nb2;
+                break;
+        }
+        
+
+        
     ?>
 </body>
 </html>
